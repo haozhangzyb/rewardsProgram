@@ -1,0 +1,91 @@
+h1.title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+div.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+div.filter-area {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+label.filter-menu-label {
+  margin-right: 10px;
+}
+
+select {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background-color: #fff;
+  color: #333;
+}
+
+select.filter-menu-select:hover {
+  border-color: #224abe;
+}
+
+select.filter-menu-select:focus {
+  outline: none;
+  box-shadow: 0 0 3px 1px #4e73df;
+}
+
+select.filter-menu-select option {
+  background-color: #fff;
+  color: #333;
+}
+
+select.filter-menu-select option:checked {
+  background-color: #4e73df;
+  color: #fff;
+}
+
+.rewards-total {
+  text-align: center;
+}
+
+table.transaction-table,
+td,
+th {
+  border: 1px solid black;
+  text-align: center;
+  padding: 0.25rem 0.75rem;
+}
+
+table.transaction-table {
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 1rem auto;
+}
+
+button {
+  background-color: #4e73df;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #224abe;
+}
