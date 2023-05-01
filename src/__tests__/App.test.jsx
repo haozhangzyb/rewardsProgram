@@ -6,127 +6,157 @@ import "@testing-library/jest-dom";
 
 import App from "../App";
 
-it("customer and month dropdown menu should render and select 'all' as the default", async () => {
-  await act(async () => render(<App />));
-  const customerSelect = screen.getByRole("combobox", {
-    name: /by customer/i,
-  });
-  const monthSelect = screen.getByRole("combobox", { name: /by month/i });
-  expect(customerSelect).toHaveValue("all");
-  expect(monthSelect).toHaveValue("all");
-});
+// TODO: mock api calls
+// TODO: split testing files
+// TODO: test mock customizde hooks
 
-it("should calculate the correct rewards", async () => {
-  await act(async () => render(<App />));
-  const rewardsButton = screen.getByRole("button", {
-    name: /Get Filtered Rewards/i,
-  });
-  expect(() => screen.getByText("Total Rewards:")).toThrow();
-  await act(async () => rewardsButton.click());
-  const rewards = screen.getByText("Total Rewards: 35523");
-  expect(rewards).toBeInTheDocument();
-});
-
-it("should render the table with the correct headers", async () => {
-  await act(async () => render(<App />));
-  const headers = screen.getAllByRole("columnheader");
-  expect(headers).toHaveLength(4);
-  expect(headers[0]).toHaveTextContent("Transaction ID");
-  expect(headers[1]).toHaveTextContent("Customer ID");
-  expect(headers[2]).toHaveTextContent("Amount");
-  expect(headers[3]).toHaveTextContent("Time");
-});
-
-it("should render the table with the correct data when only filtered by month", async () => {
-  await act(async () => render(<App />));
-  const monthSelect = screen.getByRole("combobox", {
-    name: /by month/i,
-  });
-  const rewardsButton = screen.getByRole("button", {
-    name: /Get Filtered Rewards/i,
-  });
-  await act(async () => userEvent.selectOptions(monthSelect, "1"));
-  await act(async () => rewardsButton.click());
-  const rows = screen.getAllByRole("row");
-  expect(rows).toHaveLength(36);
-});
-
-it("should render the table with the correct data when only filtered by customer", async () => {
-  await act(async () => render(<App />));
-  const customerSelect = screen.getByRole("combobox", {
-    name: /by customer/i,
-  });
-  const rewardsButton = screen.getByRole("button", {
-    name: /Get Filtered Rewards/i,
-  });
-  await act(async () =>
-    userEvent.selectOptions(
-      customerSelect,
-      "2a54c963-a94a-4ca3-b97c-5b91a1010cc2"
-    )
-  );
-  await act(async () => rewardsButton.click());
-  const rows = screen.getAllByRole("row");
-  expect(rows).toHaveLength(27);
-});
-
-it("should render the table with the correct data when filtered by customer and month", async () => {
-  await act(async () => render(<App />));
-
-  const monthSelect = screen.getByRole("combobox", {
-    name: /by month/i,
+describe("App", () => {
+  it("should displays loading text", async () => {
+    await act(async () => render(<App />));
+    const loadingText = screen.getByText("Loading...");
+    expect(loadingText).toBeInTheDocument();
   });
 
-  const customerSelect = screen.getByRole("combobox", {
-    name: /by customer/i,
+  it("customer and month dropdown menu should render and select 'all' as the default", async () => {
+    await act(async () => render(<App />));
+
+    const customerSelect = await screen.findByRole("combobox", {
+      name: /by customer/i,
+    });
+    const monthSelect = await screen.findByRole("combobox", {
+      name: /by month/i,
+    });
+    expect(customerSelect).toHaveValue("all");
+    expect(monthSelect).toHaveValue("all");
   });
 
-  const rewardsButton = screen.getByRole("button", {
-    name: /Get Filtered Rewards/i,
+  it("should calculate the correct rewards", async () => {
+    await act(async () => render(<App />));
+
+    const getAllButton = await screen.findByRole("button", {
+      name: /get all transactions with rewards/i,
+    });
+    await act(async () => getAllButton.click());
+    const rewards = screen.getByText("Total Rewards: 35523");
+    expect(rewards).toBeInTheDocument();
   });
-  await act(async () => {
-    userEvent.selectOptions(
-      customerSelect,
-      "2a54c963-a94a-4ca3-b97c-5b91a1010cc2"
+
+  it("should render the table with the correct headers", async () => {
+    await act(async () => render(<App />));
+
+    const tables = await screen.findAllByRole("table");
+    const headers = tables[0].querySelectorAll("th");
+    expect(headers).toHaveLength(5);
+    expect(headers[0]).toHaveTextContent("Transaction ID");
+    expect(headers[1]).toHaveTextContent("Customer ID");
+    expect(headers[2]).toHaveTextContent("Amount");
+    expect(headers[3]).toHaveTextContent("Transaction Time");
+    expect(headers[4]).toHaveTextContent("Rewards");
+  });
+
+  it("should render the table with the correct data when only filtered by month", async () => {
+    await act(async () => render(<App />));
+
+    const monthSelect = await screen.findByRole("combobox", {
+      name: /by month/i,
+    });
+    const customerSelect = await screen.findByRole("combobox", {
+      name: /by customer/i,
+    });
+    const rewardsButton = await screen.findByRole("button", {
+      name: /Get filtered Rewards/i,
+    });
+
+    await act(async () => userEvent.selectOptions(monthSelect, "1"));
+    await act(async () => userEvent.selectOptions(customerSelect, "all"));
+    await act(async () => rewardsButton.click());
+    const rows = screen.getAllByRole("row");
+    expect(rows).toHaveLength(36);
+  });
+
+  it("should render the table with the correct data when only filtered by customer", async () => {
+    await act(async () => render(<App />));
+
+    const monthSelect = await screen.findByRole("combobox", {
+      name: /by month/i,
+    });
+    const customerSelect = await screen.findByRole("combobox", {
+      name: /by customer/i,
+    });
+    const rewardsButton = await screen.findByRole("button", {
+      name: /Get filtered Rewards/i,
+    });
+
+    await act(async () => userEvent.selectOptions(monthSelect, "all"));
+
+    await act(async () =>
+      userEvent.selectOptions(
+        customerSelect,
+        "2a54c963-a94a-4ca3-b97c-5b91a1010cc2"
+      )
     );
-    userEvent.selectOptions(monthSelect, "1");
-  });
-  await act(async () => rewardsButton.click());
-  const rows = screen.getAllByRole("row");
-  expect(rows).toHaveLength(7);
-});
-
-it("should render the table with the correct data when filtered by customer and month and then reset", async () => {
-  await act(async () => render(<App />));
-
-  const monthSelect = screen.getByRole("combobox", {
-    name: /by month/i,
+    await act(async () => rewardsButton.click());
+    const rows = screen.getAllByRole("row");
+    expect(rows).toHaveLength(29);
   });
 
-  const customerSelect = screen.getByRole("combobox", {
-    name: /by customer/i,
-  });
+  it("should render the table with the correct data when filtered by customer and month", async () => {
+    await act(async () => render(<App />));
 
-  const rewardsButton = screen.getByRole("button", {
-    name: /Get Filtered Rewards/i,
-  });
+    const monthSelect = await screen.findByRole("combobox", {
+      name: /by month/i,
+    });
+    const customerSelect = await screen.findByRole("combobox", {
+      name: /by customer/i,
+    });
+    const rewardsButton = await screen.findByRole("button", {
+      name: /Get filtered Rewards/i,
+    });
 
-  const allTransactionsButton = screen.getByRole("button", {
-    name: /get all transactions/i,
-  });
+    await act(async () => userEvent.selectOptions(monthSelect, "1"));
 
-  await act(async () => {
-    userEvent.selectOptions(
-      customerSelect,
-      "2a54c963-a94a-4ca3-b97c-5b91a1010cc2"
+    await act(async () =>
+      userEvent.selectOptions(
+        customerSelect,
+        "2a54c963-a94a-4ca3-b97c-5b91a1010cc2"
+      )
     );
-    userEvent.selectOptions(monthSelect, "1");
+    await act(async () => rewardsButton.click());
+    const rows = screen.getAllByRole("row");
+    expect(rows).toHaveLength(7);
   });
-  await act(async () => rewardsButton.click());
-  const rows = screen.getAllByRole("row");
-  expect(rows).toHaveLength(7);
 
-  await act(async () => allTransactionsButton.click());
-  const allRows = screen.getAllByRole("row");
-  expect(allRows).toHaveLength(101);
+  it("should render the table with the correct data when filtered by customer and month and then reset", async () => {
+    await act(async () => render(<App />));
+
+    const monthSelect = await screen.findByRole("combobox", {
+      name: /by month/i,
+    });
+    const customerSelect = await screen.findByRole("combobox", {
+      name: /by customer/i,
+    });
+
+    const rewardsButton = await screen.findByRole("button", {
+      name: /Get Filtered Rewards/i,
+    });
+
+    const allTransactionsButton = await screen.findByRole("button", {
+      name: /get all transactions/i,
+    });
+
+    await act(async () => {
+      userEvent.selectOptions(
+        customerSelect,
+        "2a54c963-a94a-4ca3-b97c-5b91a1010cc2"
+      );
+      userEvent.selectOptions(monthSelect, "1");
+    });
+    await act(async () => rewardsButton.click());
+    const rows = screen.getAllByRole("row");
+    expect(rows).toHaveLength(7);
+
+    await act(async () => allTransactionsButton.click());
+    const allRows = screen.getAllByRole("row");
+    expect(allRows).toHaveLength(103);
+  });
 });

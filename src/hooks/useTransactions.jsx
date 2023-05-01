@@ -1,67 +1,41 @@
 import { useEffect, useState } from "react";
-import {
-  getTransactions,
-  getCustomers,
-  getTransactionsWithRewardsByCustomer,
-  getTransactionsWithRewardsByCustomerAndMonth,
-  getTransactionsWithRewards,
-  getTransactionsWithRewardsByMonth,
-} from "../api/api";
+import { getTransactions } from "../api/api";
+import { mapTransactionsWithRewards } from "../utils/transactions";
 
 export default function useTransactions() {
-  const [data, setData] = useState([]);
-  const [isShowRewards, setIsShowRewards] = useState(false);
-  const [customers, setCustomers] = useState([]);
-
-  let totalRewards = 0;
-  if (isShowRewards) {
-    totalRewards = data.reduce((acc, transaction) => {
-      return acc + transaction.rewards;
-    }, 0);
-  }
+  const [transactions, setTransactions] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    getCustomers().then(setCustomers);
-    fetchTransactions();
+    setIsLoading(true);
+    // mock api fetching delay
+    setTimeout(() => {
+      getTransactions()
+        .then((res) => setTransactions(mapTransactionsWithRewards(res)))
+        .catch(console.error)
+        .finally(() => setIsLoading(false));
+    }, 500);
   }, []);
 
-  async function fetchTransactionsWithRewards(
-    selectedCustomer,
-    selectedMonth
-  ) {
-    let transactions = [];
-    if (selectedCustomer === "all" && selectedMonth === "all") {
-      transactions = await getTransactionsWithRewards();
-    } else if (selectedCustomer === "all" && selectedMonth !== "all") {
-      transactions = await getTransactionsWithRewardsByMonth(
-        selectedMonth
-      );
-    } else if (selectedCustomer !== "all" && selectedMonth === "all") {
-      transactions = await getTransactionsWithRewardsByCustomer(
-        selectedCustomer
-      );
-    } else {
-      transactions = await getTransactionsWithRewardsByCustomerAndMonth(
-        selectedCustomer,
-        selectedMonth
-      );
+  const customers = transactions.reduce((acc, transaction) => {
+    if (!acc.includes(transaction.customer_id)) {
+      acc.push(transaction.customer_id);
     }
-    setData(transactions);
-    setIsShowRewards(true);
-  }
+    return acc;
+  }, []);
 
-  async function fetchTransactions() {
-    const res = await getTransactions();
-    setData(res);
-    setIsShowRewards(false);
-  }
+  const months = transactions.reduce((acc, transaction) => {
+    const month = new Date(transaction.transaction_time).getMonth();
+    if (!acc.includes(month)) {
+      acc.push(month);
+    }
+    return acc;
+  }, []);
 
   return {
-    data,
-    fetchTransactionsWithRewards,
-    fetchTransactions,
-    isShowRewards,
-    totalRewards,
+    isLoading,
+    transactions,
     customers,
+    months,
   };
 }

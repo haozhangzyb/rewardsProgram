@@ -2,25 +2,16 @@ import { useState } from "react";
 import "./App.css";
 import DropdownMenu from "./components/DropdownMenu";
 import useTransactions from "./hooks/useTransactions";
+import { getFilteredTransactions } from "./utils/transactions";
+import TransactionTable from "./components/TransactionTable";
+import TransactionTableGroup from "./components/TransactionTableGroup";
+import { monthsNames } from "./utils/util";
 
 function App() {
   const [selectedMonth, setSelectedMonth] = useState("all");
   const [selectedCustomer, setSelectedCustomer] = useState("all");
 
-  const {
-    data,
-    fetchTransactionsWithRewards,
-    fetchTransactions,
-    isShowRewards,
-    totalRewards,
-    customers,
-  } = useTransactions();
-
-  function handleGetAllTransaction() {
-    setSelectedMonth("all");
-    setSelectedCustomer("all");
-    fetchTransactions();
-  }
+  const { isLoading, transactions, customers, months } = useTransactions();
 
   const customerMenuOptions = [
     { name: "All customers", value: "all" },
@@ -32,10 +23,30 @@ function App() {
 
   const monthMenuOptions = [
     { name: "All months", value: "all" },
-    { name: "Feb", value: "1" },
-    { name: "Mar", value: "2" },
-    { name: "Apr", value: "3" },
+    ...months.map((month) => ({
+      name: monthsNames[month],
+      value: month,
+    })),
   ];
+
+  if (isLoading) {
+    return <h1>Loading...</h1>;
+  }
+
+  const filteredTransactions = getFilteredTransactions(
+    selectedCustomer,
+    selectedMonth,
+    transactions
+  );
+
+  function handleResetFilters() {
+    setSelectedMonth("all");
+    setSelectedCustomer("all");
+  }
+
+  const totalRewards = filteredTransactions.reduce((acc, transaction) => {
+    return acc + transaction.rewards;
+  }, 0);
 
   return (
     <>
@@ -56,48 +67,24 @@ function App() {
             setSelectedOption={setSelectedMonth}
           />
 
-          <button
-            onClick={() =>
-              fetchTransactionsWithRewards(selectedCustomer, selectedMonth)
-            }
-          >
-            Get Filtered Rewards
-          </button>
+          <button>Get Filtered Rewards</button>
         </div>
 
-        <button onClick={handleGetAllTransaction}>
-          Get All Transactions
+        <button onClick={handleResetFilters}>
+          Get All Transactions with Rewards
         </button>
       </div>
 
-      {isShowRewards && (
-        <h2 className='rewards-total'>Total Rewards: {totalRewards}</h2>
-      )}
+      <h2 className='rewards-total'>Total Rewards: {totalRewards}</h2>
 
-      <table className='transaction-table'>
-        <thead>
-          <tr>
-            <th>Transaction ID</th>
-            <th>Customer ID</th>
-            <th>Amount</th>
-            <th>Time</th>
-            {isShowRewards && <th>Rewards</th>}
-          </tr>
-        </thead>
-        <tbody>
-          {data.map((transaction) => (
-            <tr key={transaction.id}>
-              <td>{transaction.id}</td>
-              <td>{transaction.customer_id}</td>
-              <td>{transaction.amount}</td>
-              <td>
-                {new Date(transaction.time).toISOString().split("T")[0]}
-              </td>
-              {isShowRewards && <td>{transaction.rewards}</td>}
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      {selectedMonth === "all" ? (
+        <TransactionTableGroup
+          transactions={filteredTransactions}
+          months={months}
+        />
+      ) : (
+        <TransactionTable transactions={filteredTransactions} />
+      )}
     </>
   );
 }

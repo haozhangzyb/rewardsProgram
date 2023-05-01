@@ -3,601 +3,602 @@
     {
       "id": "249678db-d50c-4c37-a4b3-c61a272a3ffd",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1675286962729,
-      "amount": 14
+      "transaction_time": 1675286962729,
+      "amount": 14,
+      "currency": "USD"
     },
     {
       "id": "3c35e899-af29-4c61-85f3-9a8ec0e0eccf",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1675407359657,
+      "transaction_time": 1675407359657,
       "amount": 360
     },
     {
       "id": "41d1179b-67e6-4657-931b-ccad75eeb6a4",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1675498697467,
+      "transaction_time": 1675498697467,
       "amount": 478
     },
     {
       "id": "14e686ae-7b57-4a16-bc60-3af40904b002",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1675603524339,
+      "transaction_time": 1675603524339,
       "amount": 175
     },
     {
       "id": "eb7f1327-d3d3-44db-9c47-52b104dd8537",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1675683549838,
+      "transaction_time": 1675683549838,
       "amount": 132
     },
     {
       "id": "9c179af0-b032-49ee-bc5f-fdeacabcf4ad",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1675717162477,
+      "transaction_time": 1675717162477,
       "amount": 438
     },
     {
       "id": "b1bc6b5a-c83c-4c86-9545-8593ec74fee4",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1675769481401,
+      "transaction_time": 1675769481401,
       "amount": 27
     },
     {
       "id": "c297b14d-24e5-4131-9b27-69201caa887f",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1675782792752,
+      "transaction_time": 1675782792752,
       "amount": 395
     },
     {
       "id": "8833d65f-5787-4f47-9788-12849bfc37b8",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1675813303840,
+      "transaction_time": 1675813303840,
       "amount": 489
     },
     {
       "id": "60fa1aa4-242e-4043-85ec-09eea3744e84",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1675899588206,
+      "transaction_time": 1675899588206,
       "amount": 266
     },
     {
       "id": "8b945432-cded-4530-8b7b-6c195d4fc2b0",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1675909185440,
+      "transaction_time": 1675909185440,
       "amount": 420
     },
     {
       "id": "34355baf-c171-42bf-8ed9-61de11a254b9",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1676027783809,
+      "transaction_time": 1676027783809,
       "amount": 161
     },
     {
       "id": "d8578727-6f13-4c98-8d18-51881f7ccaca",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1676093168844,
+      "transaction_time": 1676093168844,
       "amount": 197
     },
     {
       "id": "ea71c246-a807-43d9-bf04-66a9c2e4e513",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1676196330655,
+      "transaction_time": 1676196330655,
       "amount": 74
     },
     {
       "id": "0d8016a3-5405-4107-9ae6-ddb2f2ccd8d8",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1676201629891,
+      "transaction_time": 1676201629891,
       "amount": 253
     },
     {
       "id": "624a241d-7fea-4a5b-a221-73f81bb1b5ca",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1676253944301,
+      "transaction_time": 1676253944301,
       "amount": 224
     },
     {
       "id": "f8909b27-f696-4222-9e74-29af12b32a83",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1676278059075,
+      "transaction_time": 1676278059075,
       "amount": 218
     },
     {
       "id": "078a25dd-2efc-4ff1-9e06-5cde4a40dcda",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1676290948977,
+      "transaction_time": 1676290948977,
       "amount": 108
     },
     {
       "id": "4cc4417a-8ff8-4e0c-846f-96f6464584ef",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1676396837050,
+      "transaction_time": 1676396837050,
       "amount": 283
     },
     {
       "id": "4068a38a-0f08-4322-a379-e08106027222",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1676514222271,
+      "transaction_time": 1676514222271,
       "amount": 164
     },
     {
       "id": "b76272d3-fbea-448b-a26b-5d4588156f06",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1676561247312,
+      "transaction_time": 1676561247312,
       "amount": 241
     },
     {
       "id": "d44966b5-4e14-480f-9181-e88d3e236393",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1676609998625,
+      "transaction_time": 1676609998625,
       "amount": 153
     },
     {
       "id": "3b471536-8c70-4b9a-92ea-8102b4273197",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1676678778802,
+      "transaction_time": 1676678778802,
       "amount": 133
     },
     {
       "id": "5c4567d1-ea24-4640-b0a9-3c45255e4f3e",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1676684474461,
+      "transaction_time": 1676684474461,
       "amount": 108
     },
     {
       "id": "4b8400e6-4440-41ae-90fb-d9493e96aa45",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1676753171612,
+      "transaction_time": 1676753171612,
       "amount": 186
     },
     {
       "id": "76d52382-ed6e-4fdc-b3e3-42b548534810",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1676830218338,
+      "transaction_time": 1676830218338,
       "amount": 115
     },
     {
       "id": "3b552d0b-9681-4e30-bf00-cd635a8b1b59",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1677025691645,
+      "transaction_time": 1677025691645,
       "amount": 248
     },
     {
       "id": "af01810d-5cf1-4a85-a285-e21b50e8bac3",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1677064354314,
+      "transaction_time": 1677064354314,
       "amount": 30
     },
     {
       "id": "3e43ebf1-123e-40c7-a105-93cc60208289",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1677109391655,
+      "transaction_time": 1677109391655,
       "amount": 174
     },
     {
       "id": "20617cb3-c441-40af-b7b0-4b4cd967936d",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1677172993641,
+      "transaction_time": 1677172993641,
       "amount": 408
     },
     {
       "id": "2306c6a4-2fd7-4639-869c-922043f4d6d4",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1677310657034,
+      "transaction_time": 1677310657034,
       "amount": 425
     },
     {
       "id": "8ebaac43-c4d9-4f2d-86e8-0b3b3edfda58",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1677381769993,
+      "transaction_time": 1677381769993,
       "amount": 425
     },
     {
       "id": "49700c5e-4ae5-43f6-a13d-3cbad3de6f2e",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1677392274808,
+      "transaction_time": 1677392274808,
       "amount": 409
     },
     {
       "id": "09764481-5f7d-478b-858b-3834c323f0c1",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1677426921965,
+      "transaction_time": 1677426921965,
       "amount": 200
     },
     {
       "id": "86c0823c-cfe1-41a8-8f8f-53999f173184",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1677463983554,
+      "transaction_time": 1677463983554,
       "amount": 344
     },
     {
       "id": "a3222f62-6ef0-4b0d-8880-d8aaa7bd86e2",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1677674268183,
+      "transaction_time": 1677674268183,
       "amount": 445
     },
     {
       "id": "9b593ace-eacb-4f85-91d3-0ab68600ad7d",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1677808426346,
+      "transaction_time": 1677808426346,
       "amount": 87
     },
     {
       "id": "f0f534b3-429d-47e6-aed9-899a9845a6ee",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1677829822339,
+      "transaction_time": 1677829822339,
       "amount": 478
     },
     {
       "id": "84e8530c-6225-45a0-bbbe-a12b87a56328",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1677886551803,
+      "transaction_time": 1677886551803,
       "amount": 34
     },
     {
       "id": "a32a7396-940a-45b7-9678-2538b6db0355",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1677923527372,
+      "transaction_time": 1677923527372,
       "amount": 387
     },
     {
       "id": "a041d52d-9930-4cd5-ae73-418098f657a7",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1677924801048,
+      "transaction_time": 1677924801048,
       "amount": 236
     },
     {
       "id": "5bff6047-ba74-4a4c-82f4-230f98c68f69",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1677960895969,
+      "transaction_time": 1677960895969,
       "amount": 156
     },
     {
       "id": "68fcc236-1dad-425c-b9a4-58e26cd6c3b9",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1677973945130,
+      "transaction_time": 1677973945130,
       "amount": 47
     },
     {
       "id": "c229bad7-a3fa-457d-84a0-9b96b8459209",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1678016972056,
+      "transaction_time": 1678016972056,
       "amount": 361
     },
     {
       "id": "aef27069-e0b1-4f46-864f-3d1d83fe79a0",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1678039660263,
+      "transaction_time": 1678039660263,
       "amount": 369
     },
     {
       "id": "a086ea78-847b-47e3-8c42-0a48eb1d1392",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1678062307614,
+      "transaction_time": 1678062307614,
       "amount": 267
     },
     {
       "id": "b4eab890-fc88-40e5-a050-3d2da884da6f",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1678084616235,
+      "transaction_time": 1678084616235,
       "amount": 119
     },
     {
       "id": "91b3e4bc-48de-4090-a674-8cc871c42e7c",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1678125096941,
+      "transaction_time": 1678125096941,
       "amount": 492
     },
     {
       "id": "233f5dc2-c731-4637-ade4-04b4a1746f85",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1678203906467,
+      "transaction_time": 1678203906467,
       "amount": 87
     },
     {
       "id": "47a23b29-5541-47f0-aeb9-b50c70893b6f",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1678297970849,
+      "transaction_time": 1678297970849,
       "amount": 69
     },
     {
       "id": "a2e09910-76a8-47a0-97b5-e8f92abe44e6",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1678305331163,
+      "transaction_time": 1678305331163,
       "amount": 420
     },
     {
       "id": "5ca5282b-ad6a-4e68-98d4-9ed3d93033c4",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1678313366146,
+      "transaction_time": 1678313366146,
       "amount": 272
     },
     {
       "id": "13cb212e-5732-460e-9ed7-fbc5f32d73f6",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1678479772458,
+      "transaction_time": 1678479772458,
       "amount": 231
     },
     {
       "id": "06d1e1f0-e852-44eb-b88f-09358423595f",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1678593469409,
+      "transaction_time": 1678593469409,
       "amount": 170
     },
     {
       "id": "55ad2f4d-24a2-466f-91b1-5cc4a39a3de7",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1678596557559,
+      "transaction_time": 1678596557559,
       "amount": 471
     },
     {
       "id": "c2190804-784a-4318-9320-7981bb638c55",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1678667329186,
+      "transaction_time": 1678667329186,
       "amount": 265
     },
     {
       "id": "a472a96e-d7ea-488c-9a4d-904d72eb8422",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1678732023493,
+      "transaction_time": 1678732023493,
       "amount": 81
     },
     {
       "id": "c8a45085-fbbd-4eff-bbbe-27b06ed5fb24",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1678937185630,
+      "transaction_time": 1678937185630,
       "amount": 373
     },
     {
       "id": "d72cd2fd-8f1c-4103-9bbf-353b433b82bf",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1678960807148,
+      "transaction_time": 1678960807148,
       "amount": 199
     },
     {
       "id": "49b5d431-eed2-4a16-9c36-42a8aa9fbec4",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1679022630938,
+      "transaction_time": 1679022630938,
       "amount": 43
     },
     {
       "id": "5fe216a6-67da-4c83-904f-76d90bbef4ab",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1679059124029,
+      "transaction_time": 1679059124029,
       "amount": 67
     },
     {
       "id": "c6980cc1-334b-47c1-9cb7-de8a60be6146",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1679096339535,
+      "transaction_time": 1679096339535,
       "amount": 176
     },
     {
       "id": "fab2e2f5-fa1c-4c1e-be7b-469c0a6a969c",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1679222497668,
+      "transaction_time": 1679222497668,
       "amount": 404
     },
     {
       "id": "2d656623-104a-4d3f-8125-5b357c3ab97a",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1679232247231,
+      "transaction_time": 1679232247231,
       "amount": 58
     },
     {
       "id": "470686ef-b42f-447d-9df6-3499e82b71b9",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1679399060541,
+      "transaction_time": 1679399060541,
       "amount": 353
     },
     {
       "id": "f5e20048-199f-4292-bd25-06c3503ad637",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1679464496281,
+      "transaction_time": 1679464496281,
       "amount": 199
     },
     {
       "id": "cd43afb6-6662-4bdd-9188-3f0599485bb3",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1679504300390,
+      "transaction_time": 1679504300390,
       "amount": 386
     },
     {
       "id": "1f47be0c-cfce-4f9e-a2c7-e0025a4ada85",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1679526970019,
+      "transaction_time": 1679526970019,
       "amount": 307
     },
     {
       "id": "7e21444a-3028-4398-9a5e-a063f23dd60f",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1679685218768,
+      "transaction_time": 1679685218768,
       "amount": 132
     },
     {
       "id": "b688dc81-3fce-4ccc-b7af-2df33ef9b240",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1679893553969,
+      "transaction_time": 1679893553969,
       "amount": 330
     },
     {
       "id": "f4f96c8b-0837-4d1d-8b4d-742c1c7d9791",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1680085942525,
+      "transaction_time": 1680085942525,
       "amount": 313
     },
     {
       "id": "af41b288-e363-4003-9295-38b604c9792f",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1680089064157,
+      "transaction_time": 1680089064157,
       "amount": 272
     },
     {
       "id": "df1713b0-beec-4374-88aa-593582557906",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1680198903356,
+      "transaction_time": 1680198903356,
       "amount": 151
     },
     {
       "id": "c1394e1f-d301-4f5e-949f-734819e9a603",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1680253258942,
+      "transaction_time": 1680253258942,
       "amount": 161
     },
     {
       "id": "1cb1ff30-5019-4c53-8510-bbbb02c3d0c2",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1680420144879,
+      "transaction_time": 1680420144879,
       "amount": 327
     },
     {
       "id": "95639b4c-c1a8-4b87-9790-c827117ee41e",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1680445168999,
+      "transaction_time": 1680445168999,
       "amount": 204
     },
     {
       "id": "a729ff32-48ce-4ea0-8ae2-44a9c8a741a5",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1680532465433,
+      "transaction_time": 1680532465433,
       "amount": 143
     },
     {
       "id": "8d448534-0efc-4af9-bd3e-bdc039e4ac6d",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1680649293756,
+      "transaction_time": 1680649293756,
       "amount": 196
     },
     {
       "id": "6a0116cd-1ec1-4e5a-bdbe-55afda1ac293",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1680885728535,
+      "transaction_time": 1680885728535,
       "amount": 295
     },
     {
       "id": "45b958d7-78e9-4bfe-9694-a2c9891d85e3",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1680976179104,
+      "transaction_time": 1680976179104,
       "amount": 126
     },
     {
       "id": "d4ae7705-986d-4e01-b057-383a10eb6932",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1681054363693,
+      "transaction_time": 1681054363693,
       "amount": 199
     },
     {
       "id": "d13b19d2-1fc1-4273-8627-34f4c8f0b7ba",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1681066968168,
+      "transaction_time": 1681066968168,
       "amount": 410
     },
     {
       "id": "266237e0-d072-4218-aa8f-1a95246ea9fe",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1681147463832,
+      "transaction_time": 1681147463832,
       "amount": 336
     },
     {
       "id": "31c9300d-e1e0-4ab1-ab00-a4732399d0d9",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1681194100619,
+      "transaction_time": 1681194100619,
       "amount": 280
     },
     {
       "id": "106066ef-41d9-420d-9f30-ddb3dcf3b2b4",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1681326100928,
+      "transaction_time": 1681326100928,
       "amount": 149
     },
     {
       "id": "b58b8630-5701-4d86-a42e-6dabd6721aec",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1681349819128,
+      "transaction_time": 1681349819128,
       "amount": 315
     },
     {
       "id": "deddc493-e519-4e2b-b6de-7efd78455fd6",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1681742932953,
+      "transaction_time": 1681742932953,
       "amount": 206
     },
     {
       "id": "65c9c243-15e4-4e96-9358-ed2b6345aed6",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1681792904317,
+      "transaction_time": 1681792904317,
       "amount": 25
     },
     {
       "id": "f54fbd89-3f90-4ef6-8a39-656fb0e87a08",
       "customer_id": "b8decdc4-a601-47a5-bdf2-5659cdedb692",
-      "time": 1681802737621,
+      "transaction_time": 1681802737621,
       "amount": 265
     },
     {
       "id": "5c19f952-914b-4962-a099-52e26b30c9a1",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1681915653606,
+      "transaction_time": 1681915653606,
       "amount": 7
     },
     {
       "id": "7f090c0c-c211-4ccf-b889-43bb961fe72c",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1681926152799,
+      "transaction_time": 1681926152799,
       "amount": 278
     },
     {
       "id": "eb03bf93-83b8-4c47-bd84-8194611d59c8",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1681993340316,
+      "transaction_time": 1681993340316,
       "amount": 409
     },
     {
       "id": "254a45aa-1216-460f-952b-9169365b1915",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1682011183133,
+      "transaction_time": 1682011183133,
       "amount": 265
     },
     {
       "id": "68618f5e-8a3a-45c3-bb62-aec03363f58c",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1682078501360,
+      "transaction_time": 1682078501360,
       "amount": 400
     },
     {
       "id": "b3391b44-ba32-45e3-82bc-6a44ce509f51",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1682140188123,
+      "transaction_time": 1682140188123,
       "amount": 116
     },
     {
       "id": "0d4b0aeb-cf73-4b1e-b9ff-aae2fed38008",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1682198004283,
+      "transaction_time": 1682198004283,
       "amount": 403
     },
     {
       "id": "05fd3f56-542d-4328-ad8b-d170f404380b",
       "customer_id": "2a54c963-a94a-4ca3-b97c-5b91a1010cc2",
-      "time": 1682271066339,
+      "transaction_time": 1682271066339,
       "amount": 464
     },
     {
       "id": "9912abfd-5ff4-4365-af8f-b62bf477ac72",
       "customer_id": "14e5668a-7d4d-4406-af6b-7fa45dd1d04d",
-      "time": 1682336011283,
+      "transaction_time": 1682336011283,
       "amount": 392
     },
     {
       "id": "4ab65443-014b-453c-91cf-909be8200559",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1682467478361,
+      "transaction_time": 1682467478361,
       "amount": 391
     },
     {
       "id": "6e794175-874f-4c05-8a0f-7b6c2676ed1b",
       "customer_id": "72a4ceb2-242b-49e8-872e-1b592f45f78f",
-      "time": 1682685347024,
+      "transaction_time": 1682685347024,
       "amount": 256
     }
   ]
