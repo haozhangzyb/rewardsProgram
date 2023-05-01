@@ -13,6 +13,17 @@ export async function getTransactions() {
   return mockData.transaction;
 }
 
+export async function getCustomers() {
+  const transactions = await getTransactions();
+
+  return transactions.reduce((acc, transaction) => {
+    if (!acc.includes(transaction.customer_id)) {
+      acc.push(transaction.customer_id);
+    }
+    return acc;
+  }, []);
+}
+
 export async function getTransactionsWithRewards() {
   const transactions = await getTransactions();
 
@@ -20,17 +31,6 @@ export async function getTransactionsWithRewards() {
     ...transaction,
     rewards: calculateRewards(transaction.amount),
   }));
-}
-
-export async function getCustomers() {
-  const transactionsWithRewards = await getTransactionsWithRewards();
-
-  return transactionsWithRewards.reduce((acc, transaction) => {
-    if (!acc.includes(transaction.customer_id)) {
-      acc.push(transaction.customer_id);
-    }
-    return acc;
-  }, []);
 }
 
 export async function getTransactionsWithRewardsByMonth(month) {
