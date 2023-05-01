@@ -14,13 +14,16 @@ const TransactionTableGroup = ({ transactions, months }) => {
     <>
       {transactionsByMonth.map((transactions, index) => {
         return (
-          <div key={index}>
-            <h3 className='month-title'>
-              {monthsNames[index + 1]} Rewards Total:{" "}
-              {sumRewards(transactions)}
-            </h3>
-            <TransactionTable transactions={transactions} />
-          </div>
+          transactions !== undefined &&
+          transactions.length > 0 && (
+            <div key={index}>
+              <h3 className='month-title'>
+                {monthsNames[index + 1]} Rewards Total:{" "}
+                {sumRewards(transactions)}
+              </h3>
+              <TransactionTable transactions={transactions} />
+            </div>
+          )
         );
       })}
     </>

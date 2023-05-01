@@ -5,12 +5,56 @@ import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 
 import App from "../App";
+import { getTransactions } from "../api/api";
 
 // TODO: mock api calls
 // TODO: split testing files
 // TODO: test mock customizde hooks
 
+jest.mock("../api/api");
+
+const fakeTransactions = [
+  {
+    id: "1",
+    customer_id: "1",
+    amount: 120,
+    transaction_time: "2021-01-01T00:00:00.000Z",
+  },
+  {
+    id: "2",
+    customer_id: "1",
+    amount: 130,
+    transaction_time: "2021-02-01T00:00:00.000Z",
+  },
+  {
+    id: "3",
+    customer_id: "2",
+    amount: 140,
+    transaction_time: "2021-03-01T00:00:00.000Z",
+  },
+  {
+    id: "4",
+    customer_id: "3",
+    amount: 150,
+    transaction_time: "2021-04-01T00:00:00.000Z",
+  },
+  {
+    id: "5",
+    customer_id: "3",
+    amount: 160,
+    transaction_time: "2021-05-01T00:00:00.000Z",
+  },
+];
+
 describe("App", () => {
+  getTransactions.mockResolvedValue(
+    new Promise((resolve, reject) =>
+      setTimeout(() => {
+        resolve(fakeTransactions);
+      }, 500)
+    )
+  );
+
   it("should displays loading text", async () => {
     await act(async () => render(<App />));
     const loadingText = screen.getByText("Loading...");
@@ -37,7 +81,7 @@ describe("App", () => {
       name: /get all transactions with rewards/i,
     });
     await act(async () => getAllButton.click());
-    const rewards = screen.getByText("Total Rewards: 35523");
+    const rewards = screen.getByText("Total Rewards: 650");
     expect(rewards).toBeInTheDocument();
   });
 
@@ -71,7 +115,7 @@ describe("App", () => {
     await act(async () => userEvent.selectOptions(customerSelect, "all"));
     await act(async () => rewardsButton.click());
     const rows = screen.getAllByRole("row");
-    expect(rows).toHaveLength(36);
+    expect(rows).toHaveLength(2);
   });
 
   it("should render the table with the correct data when only filtered by customer", async () => {
@@ -89,15 +133,10 @@ describe("App", () => {
 
     await act(async () => userEvent.selectOptions(monthSelect, "all"));
 
-    await act(async () =>
-      userEvent.selectOptions(
-        customerSelect,
-        "2a54c963-a94a-4ca3-b97c-5b91a1010cc2"
-      )
-    );
+    await act(async () => userEvent.selectOptions(customerSelect, "1"));
     await act(async () => rewardsButton.click());
     const rows = screen.getAllByRole("row");
-    expect(rows).toHaveLength(29);
+    expect(rows).toHaveLength(4);
   });
 
   it("should render the table with the correct data when filtered by customer and month", async () => {
@@ -113,17 +152,11 @@ describe("App", () => {
       name: /Get filtered Rewards/i,
     });
 
-    await act(async () => userEvent.selectOptions(monthSelect, "1"));
-
-    await act(async () =>
-      userEvent.selectOptions(
-        customerSelect,
-        "2a54c963-a94a-4ca3-b97c-5b91a1010cc2"
-      )
-    );
+    await act(async () => userEvent.selectOptions(customerSelect, "1"));
+    await act(async () => userEvent.selectOptions(monthSelect, "2"));
     await act(async () => rewardsButton.click());
     const rows = screen.getAllByRole("row");
-    expect(rows).toHaveLength(7);
+    expect(rows).toHaveLength(1);
   });
 
   it("should render the table with the correct data when filtered by customer and month and then reset", async () => {
@@ -145,18 +178,15 @@ describe("App", () => {
     });
 
     await act(async () => {
-      userEvent.selectOptions(
-        customerSelect,
-        "2a54c963-a94a-4ca3-b97c-5b91a1010cc2"
-      );
-      userEvent.selectOptions(monthSelect, "1");
+      userEvent.selectOptions(customerSelect, "1");
+      userEvent.selectOptions(monthSelect, "2");
     });
     await act(async () => rewardsButton.click());
     const rows = screen.getAllByRole("row");
-    expect(rows).toHaveLength(7);
+    expect(rows).toHaveLength(1);
 
     await act(async () => allTransactionsButton.click());
     const allRows = screen.getAllByRole("row");
-    expect(allRows).toHaveLength(103);
+    expect(allRows).toHaveLength(10);
   });
 });
