@@ -8,13 +8,10 @@ export default function useTransactions() {
 
   useEffect(() => {
     setIsLoading(true);
-    // mock api fetching delay
-    setTimeout(() => {
-      getTransactions()
-        .then((res) => setTransactions(mapTransactionsWithRewards(res)))
-        .catch(console.error)
-        .finally(() => setIsLoading(false));
-    }, 500);
+    getTransactions()
+      .then((res) => setTransactions(mapTransactionsWithRewards(res)))
+      .catch(console.error)
+      .finally(() => setIsLoading(false));
   }, []);
 
   const customers = transactions.reduce((acc, transaction) => {
