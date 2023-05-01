@@ -4,45 +4,46 @@ import { act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import "@testing-library/jest-dom";
 
-import App from "../App";
-import { getTransactions } from "../api/api";
+import App from "./App";
+import { getTransactions } from "./api/api";
 
 // TODO: mock api calls
 // TODO: split testing files
 // TODO: test mock customizde hooks
 
-jest.mock("../api/api");
+jest.mock("./api/api");
 
-const fakeTransactions = [
+// "2021-01-01T00:00:00.000Z", "2021-02-01T00:00:00.000Z", "2021-03-01T00:00:00.000Z", "2021-04-01T00:00:00.000Z", "2021-05-01T00:00:00.000Z"
+export const fakeTransactions = [
   {
     id: "1",
     customer_id: "1",
     amount: 120,
-    transaction_time: "2021-01-01T00:00:00.000Z",
+    transaction_time: 1609459200000,
   },
   {
     id: "2",
     customer_id: "1",
     amount: 130,
-    transaction_time: "2021-02-01T00:00:00.000Z",
+    transaction_time: 1612137600000,
   },
   {
     id: "3",
     customer_id: "2",
     amount: 140,
-    transaction_time: "2021-03-01T00:00:00.000Z",
+    transaction_time: 1614556800000,
   },
   {
     id: "4",
     customer_id: "3",
     amount: 150,
-    transaction_time: "2021-04-01T00:00:00.000Z",
+    transaction_time: 1617235200000,
   },
   {
     id: "5",
     customer_id: "3",
     amount: 160,
-    transaction_time: "2021-05-01T00:00:00.000Z",
+    transaction_time: 1619827200000,
   },
 ];
 

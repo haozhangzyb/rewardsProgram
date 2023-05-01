@@ -1,5 +1,5 @@
-import { getTransactions } from "../api/api";
-import mockData from "../api/mockData.json";
+import { getTransactions } from "./api";
+import mockData from "./mockData.json";
 
 describe("test getTransactions", function () {
   it("test getTransactions", async () => {
