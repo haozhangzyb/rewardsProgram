@@ -7,10 +7,6 @@ import "@testing-library/jest-dom";
 import App from "./App";
 import { getTransactions } from "./api/api";
 
-// TODO: mock api calls
-// TODO: split testing files
-// TODO: test mock customizde hooks
-
 jest.mock("./api/api");
 
 // "2021-01-02T00:00:00.000Z", "2021-02-02T00:00:00.000Z", "2021-03-02T00:00:00.000Z", "2021-04-2T00:00:00.000Z", "2021-05-02T00:00:00.000Z"
