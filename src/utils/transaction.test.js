@@ -1,7 +1,7 @@
 import { calculateRewards } from "./transactions";
 
 import { mapTransactionsWithRewards } from "./transactions";
-import { fakeTransactions } from "../App.test";
+import { mockDataForApiTest } from "../api/mockDataForAPITest";
 
 describe("transaction", () => {
   it("should calculate correct rewards", () => {
@@ -50,7 +50,7 @@ describe("transaction", () => {
         rewards: 170,
       },
     ];
-    expect(mapTransactionsWithRewards(fakeTransactions)).toEqual(
+    expect(mapTransactionsWithRewards(mockDataForApiTest)).toEqual(
       expectedTransactions
     );
   });

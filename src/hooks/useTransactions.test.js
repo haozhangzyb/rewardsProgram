@@ -1,8 +1,8 @@
 import { act, renderHook, waitFor } from "@testing-library/react";
 
-import { fakeTransactions } from "../App.test";
 import useTransactions from "./useTransactions";
 import { getTransactions } from "../api/api";
+import { mockDataForApiTest } from "../api/mockDataForAPITest";
 
 jest.mock("../api/api");
 
@@ -10,7 +10,7 @@ describe("useTransactions", () => {
   getTransactions.mockResolvedValue(
     new Promise((resolve) =>
       setTimeout(() => {
-        resolve(fakeTransactions);
+        resolve(mockDataForApiTest);
       }, 500)
     )
   );
