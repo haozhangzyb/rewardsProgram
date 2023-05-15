@@ -15,13 +15,14 @@ div.container {
 div.filter-area {
   width: 100%;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
+}
 
-  margin-bottom: 20px;
-  padding: 10px;
+div.container {
+  gap: 1rem;
   border: 1px solid #ccc;
+  padding: 1rem;
 }
 
 label.filter-menu-label {
@@ -29,7 +30,6 @@ label.filter-menu-label {
 }
 
 select {
-  font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
   border: 1px solid #ccc;
@@ -64,7 +64,7 @@ select.filter-menu-select option:checked {
 table.transaction-table,
 td,
 th {
-  border: 1px solid black;
+  border: 1px solid #ccc;
   text-align: center;
   padding: 0.25rem 0.75rem;
 }
@@ -87,13 +87,27 @@ table.transaction-table {
 button {
   background-color: #4e73df;
   color: #fff;
-  padding: 10px 20px;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   border: none;
-  margin-right: 10px;
   cursor: pointer;
 }
 
 button:hover {
   background-color: #224abe;
+}
+
+@media only screen and (max-width: 740px) {
+  .filter-area {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  select.filter-menu-select {
+    width: 9rem;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
 }

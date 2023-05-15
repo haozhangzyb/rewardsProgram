@@ -66,8 +66,6 @@ function App() {
             selectedOption={selectedMonth}
             setSelectedOption={setSelectedMonth}
           />
-
-          <button>Get Filtered Rewards</button>
         </div>
 
         <button onClick={handleResetFilters}>
@@ -77,14 +75,16 @@ function App() {
 
       <h2 className='rewards-total'>Total Rewards: {totalRewards}</h2>
 
-      {selectedMonth === "all" ? (
-        <TransactionTableGroup
-          transactions={filteredTransactions}
-          months={months}
-        />
-      ) : (
-        <TransactionTable transactions={filteredTransactions} />
-      )}
+      <div className='table-container'>
+        {selectedMonth === "all" ? (
+          <TransactionTableGroup
+            transactions={filteredTransactions}
+            months={months}
+          />
+        ) : (
+          <TransactionTable transactions={filteredTransactions} />
+        )}
+      </div>
     </>
   );
 }

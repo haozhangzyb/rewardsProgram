@@ -9,7 +9,7 @@ export default function DropdownMenu({
   return (
     <form>
       <label htmlFor={name} className='filter-menu-label'>
-        by {name}:
+        Filter by {name}:
       </label>
       <select
         className='filter-menu-select'

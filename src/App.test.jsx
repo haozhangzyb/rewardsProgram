@@ -103,13 +103,9 @@ describe("App", () => {
     const customerSelect = await screen.findByRole("combobox", {
       name: /by customer/i,
     });
-    const rewardsButton = await screen.findByRole("button", {
-      name: /Get filtered Rewards/i,
-    });
 
     await act(async () => userEvent.selectOptions(monthSelect, "1"));
     await act(async () => userEvent.selectOptions(customerSelect, "all"));
-    await act(async () => rewardsButton.click());
     const rows = screen.getAllByRole("row");
     expect(rows).toHaveLength(2);
   });
@@ -123,14 +119,10 @@ describe("App", () => {
     const customerSelect = await screen.findByRole("combobox", {
       name: /by customer/i,
     });
-    const rewardsButton = await screen.findByRole("button", {
-      name: /Get filtered Rewards/i,
-    });
 
     await act(async () => userEvent.selectOptions(monthSelect, "all"));
 
     await act(async () => userEvent.selectOptions(customerSelect, "1"));
-    await act(async () => rewardsButton.click());
     const rows = screen.getAllByRole("row");
     expect(rows).toHaveLength(4);
   });
@@ -144,13 +136,9 @@ describe("App", () => {
     const customerSelect = await screen.findByRole("combobox", {
       name: /by customer/i,
     });
-    const rewardsButton = await screen.findByRole("button", {
-      name: /Get filtered Rewards/i,
-    });
 
     await act(async () => userEvent.selectOptions(customerSelect, "1"));
     await act(async () => userEvent.selectOptions(monthSelect, "2"));
-    await act(async () => rewardsButton.click());
     const rows = screen.getAllByRole("row");
     expect(rows).toHaveLength(1);
   });
@@ -165,10 +153,6 @@ describe("App", () => {
       name: /by customer/i,
     });
 
-    const rewardsButton = await screen.findByRole("button", {
-      name: /Get Filtered Rewards/i,
-    });
-
     const allTransactionsButton = await screen.findByRole("button", {
       name: /get all transactions/i,
     });
@@ -177,7 +161,6 @@ describe("App", () => {
       userEvent.selectOptions(customerSelect, "1");
       userEvent.selectOptions(monthSelect, "2");
     });
-    await act(async () => rewardsButton.click());
     const rows = screen.getAllByRole("row");
     expect(rows).toHaveLength(1);
 
