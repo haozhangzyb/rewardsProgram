@@ -8,7 +8,7 @@ jest.mock("../api/api");
 
 describe("useTransactions", () => {
   getTransactions.mockResolvedValue(
-    new Promise((resolve, reject) =>
+    new Promise((resolve) =>
       setTimeout(() => {
         resolve(fakeTransactions);
       }, 500)
