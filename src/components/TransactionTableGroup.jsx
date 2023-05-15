@@ -1,9 +1,10 @@
-import React from "react";
+import PropTypes from "prop-types";
+
 import TransactionTable from "./TransactionTable";
 import { monthsNames } from "../utils/util";
 import { sumRewards } from "../utils/transactions";
 
-const TransactionTableGroup = ({ transactions, months }) => {
+export default function TransactionTableGroup({ transactions, months }) {
   const transactionsByMonth = months.map((month) => {
     return transactions.filter((transaction) => {
       return new Date(transaction.transaction_time).getMonth() === month;
@@ -12,7 +13,7 @@ const TransactionTableGroup = ({ transactions, months }) => {
 
   return (
     <>
-      {transactionsByMonth.map((transactions, index) => {
+      {transactionsByMonth?.map((transactions, index) => {
         return (
           transactions !== undefined &&
           transactions.length > 0 && (
@@ -28,6 +29,10 @@ const TransactionTableGroup = ({ transactions, months }) => {
       })}
     </>
   );
-};
+}
 
-export default TransactionTableGroup;
+// add this to fix linting error:
+TransactionTableGroup.propTypes = {
+  transactions: PropTypes.array.isRequired,
+  months: PropTypes.array.isRequired,
+};

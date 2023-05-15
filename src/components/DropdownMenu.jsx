@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function DropdownMenu({
   name,
   options,
@@ -16,7 +18,7 @@ export default function DropdownMenu({
         onChange={(e) => setSelectedOption(e.target.value)}
         value={selectedOption}
       >
-        {options.map((item) => (
+        {options?.map((item) => (
           <option value={item.value} key={item.value}>
             {item.name}
           </option>
@@ -25,3 +27,11 @@ export default function DropdownMenu({
     </form>
   );
 }
+
+// add this to fix linting error:
+DropdownMenu.propTypes = {
+  name: PropTypes.string.isRequired,
+  options: PropTypes.array.isRequired,
+  selectedOption: PropTypes.string.isRequired,
+  setSelectedOption: PropTypes.func.isRequired,
+};

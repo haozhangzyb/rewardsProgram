@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { formatTransactionTime } from "../utils/util";
 
 export default function TransactionTable({ transactions }) {
@@ -13,7 +14,7 @@ export default function TransactionTable({ transactions }) {
         </tr>
       </thead>
       <tbody>
-        {transactions.map((transaction) => (
+        {transactions?.map((transaction) => (
           <tr key={transaction.id}>
             <td>{transaction.id}</td>
             <td>{transaction.customer_id}</td>
@@ -26,3 +27,8 @@ export default function TransactionTable({ transactions }) {
     </table>
   );
 }
+
+// add this to fix linting error:
+TransactionTable.propTypes = {
+  transactions: PropTypes.array.isRequired,
+};

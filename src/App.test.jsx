@@ -1,4 +1,3 @@
-import React from "react";
 import { render, screen } from "@testing-library/react";
 import { act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -45,7 +44,7 @@ export const fakeTransactions = [
 
 describe("App", () => {
   getTransactions.mockResolvedValue(
-    new Promise((resolve, reject) =>
+    new Promise((resolve) =>
       setTimeout(() => {
         resolve(fakeTransactions);
       }, 500)
