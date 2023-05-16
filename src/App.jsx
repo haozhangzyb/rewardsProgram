@@ -50,40 +50,45 @@ function App() {
 
   return (
     <>
-      <h1 className='title'>Rewards Program</h1>
+      <header>
+        <h1 className='title'>Rewards Program</h1>
+      </header>
       <div className='container'>
-        <div className='filter-area'>
-          <DropdownMenu
-            name='customer'
-            options={customerMenuOptions}
-            selectedOption={selectedCustomer}
-            setSelectedOption={setSelectedCustomer}
-          />
+        <div className='sider'>
+          <div className='filter-area'>
+            <DropdownMenu
+              name='customer'
+              options={customerMenuOptions}
+              selectedOption={selectedCustomer}
+              setSelectedOption={setSelectedCustomer}
+            />
 
-          <DropdownMenu
-            name='month'
-            options={monthMenuOptions}
-            selectedOption={selectedMonth}
-            setSelectedOption={setSelectedMonth}
-          />
+            <DropdownMenu
+              name='month'
+              options={monthMenuOptions}
+              selectedOption={selectedMonth}
+              setSelectedOption={setSelectedMonth}
+            />
+          </div>
+
+          <button onClick={handleResetFilters}>
+            Get All Transactions with Rewards
+          </button>
         </div>
+        <div className='content'>
+          <h2 className='rewards-total'>Total Rewards: {totalRewards}</h2>
 
-        <button onClick={handleResetFilters}>
-          Get All Transactions with Rewards
-        </button>
-      </div>
-
-      <h2 className='rewards-total'>Total Rewards: {totalRewards}</h2>
-
-      <div className='table-container'>
-        {selectedMonth === "all" ? (
-          <TransactionTableGroup
-            transactions={filteredTransactions}
-            months={months}
-          />
-        ) : (
-          <TransactionTable transactions={filteredTransactions} />
-        )}
+          <div className='table-container'>
+            {selectedMonth === "all" ? (
+              <TransactionTableGroup
+                transactions={filteredTransactions}
+                months={months}
+              />
+            ) : (
+              <TransactionTable transactions={filteredTransactions} />
+            )}
+          </div>
+        </div>
       </div>
     </>
   );

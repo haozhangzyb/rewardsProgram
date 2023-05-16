@@ -1,15 +1,33 @@
-h1.title {
+header {
+  background-color: #4e73df;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem 2rem;
   text-align: center;
-  margin-bottom: 2rem;
 }
 
 div.container {
+  margin-top: 5rem;
+}
+
+h1.title {
+  margin: 0;
+  font-size: large;
+}
+
+div.sider {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 900px;
   margin: 0 auto;
+  gap: 1rem;
+  border: 1px solid #ccc;
+  padding: 1rem;
 }
 
 div.filter-area {
@@ -17,12 +35,6 @@ div.filter-area {
   display: flex;
   justify-content: space-around;
   align-items: center;
-}
-
-div.container {
-  gap: 1rem;
-  border: 1px solid #ccc;
-  padding: 1rem;
 }
 
 label.filter-menu-label {
